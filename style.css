@@ -1,0 +1,238 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* CSS Reset */
+
+:root{
+  --primary-tomato: hsl(4, 100%, 67%);
+
+  --neutral-dark-slate-grey: hsl(234, 29%, 20%);
+  --neutral-charcoal-grey: hsl(235, 18%, 26%);
+  --neutral-grey: hsl(231, 7%, 60%);
+  --neutral-white: hsl(0, 0%, 100%);
+
+  --ff-default: "Roboto", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+body{
+  font-family: var(--ff-default);
+  color: var(--neutral-dark-slate-grey);
+  font-size: 1rem;
+  background-color: var(--neutral-charcoal-grey);
+  font-weight: var(--fw-regular);
+}
+.main-container{
+  background-color: var(--neutral-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 2rem;
+}
+
+.image-container{
+  order: 1;
+  width: 100%;
+}
+
+.image-container img{
+  width: 100%;
+}
+
+@media (min-width: 500px){
+  .image-container {
+    max-width: 500px;
+  }
+}
+
+.card-info{
+  order: 2;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: grid;
+  gap:1rem;
+  max-width: 500px;
+
+}
+
+.card-title{
+  font-weight: var(--fw-bold);
+  font-size: 2.75rem;
+  line-height: 2.5rem;
+}
+
+ul{
+  list-style:none;
+  padding-left: 0;
+}
+
+li{
+  background: url(./assets/images/icon-list.svg) left top no-repeat;
+  padding-left: 2rem;
+  margin: 0.75rem 0;
+}
+
+.subscribe-form{
+  display: grid;
+}
+
+.email-label{
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.5rem;
+}
+
+.error-message{
+  color: var(--primary-tomato);
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  text-align: right;
+  margin-top: -1.5rem;
+}
+
+.email-input{
+  padding: 1rem;
+  border: 1px solid var(--neutral-grey);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.email-input::placeholder{
+  color: var(--neutral-grey);
+}
+
+.subscribe-button, .dismiss-button{
+  color: var(--neutral-white);
+  background-color: var(--neutral-charcoal-grey);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+
+.subscribe-button:hover, .dismiss-button:hover{
+  background:linear-gradient(204.47deg, #ff6a3a 0%, #ff527b 100%);
+}
+
+.thanks-container{
+  background-color: var(--neutral-white);
+  min-height: 100vh;
+  display: grid;
+  place-content: space-between;
+  padding: 10rem 1.5rem 4rem 1.5rem;
+}
+
+.confirmation{
+  margin-top: 2rem;
+}
+
+.confirmation span{
+  font-weight: var(--fw-bold);
+}
+
+.success-image{
+  margin-bottom: 2rem;
+}
+
+.dismiss-button{
+  max-width: 500px;
+}
+
+.hidden{
+  display: none;
+}
+
+.attribution {
+  display: none; 
+  font-size: 11px; 
+  text-align: center;
+  color: var(--neutral-grey);
+ }
+
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+ }
+
+ @media (min-width: 767px){
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-container{
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    min-height: unset;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .image-container{
+    max-width: 360px;
+  }
+  
+  .thanks-container{
+    min-height:unset;
+    max-width: 440px;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .confirmation{
+    margin-bottom: 2rem;
+  }
+  
+  .attribution{
+    display: block;
+  }
+}
